@@ -70,10 +70,10 @@ function createBookCard(index, book) {
     
     if (book.read) {
         readButton.textContent = 'Read';
-        readButton.classList.add = 'read';
+        readButton.classList.add('read');
     } else {
         readButton.textContent = 'Not read';
-        readButton.classList.add = 'not-read';
+        readButton.classList.add('not-read');
     }
 
     card.appendChild(title);
@@ -106,7 +106,7 @@ showButton.addEventListener('click', () => {
 
 closeButton.addEventListener('click', (e) => {
     e.preventDefault();
-    bookDialog.close();
+    bookDialog.close('');
 })
 
 bookDialog.addEventListener('close', () => {

@@ -3,10 +3,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
+    --shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    --primary-color: #065f46;
 }
 
 button#new-book {
-    background-color: #065f46;
+    background-color: var(--primary-color);
     color: #f0fdf4;
     padding: 8px 20px;
     border-radius: 8px;
@@ -19,8 +21,9 @@ button#new-book {
 .header {
     display: flex;
     padding: 8px 16px;
-    background-color: #e5e7eb;
+    background-color: #fafafa;
     align-items: center;
+    box-shadow: var(--shadow);
 }
 
 .header > p {
@@ -34,9 +37,10 @@ button#new-book {
     display: flex;
     flex-direction: column;
     height: 300px;
-    border: 1px solid black;
     justify-content: flex-end;
     align-items: center;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
 }
 
 .content {
@@ -44,4 +48,110 @@ button#new-book {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 64px;
+}
+
+.card p.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #052e16;
+}
+
+.card p.author {
+    font-size: 1.25rem;
+    color: #030712;
+    font-weight: 600;
+}
+
+.card p.pages {
+    font-size: 1rem;
+    color: #3f3f46;
+    font-weight: 600;
+}
+
+.card button,
+.form-buttons button {
+    color: #fafafa;
+    padding: 8px 16px;
+    border: none;
+    width: 90%;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+button.read,
+#create-book {
+    background-color: var(--primary-color);
+}
+
+button#new-book:hover,
+button.read:hover,
+#create-book:hover {
+    background-color: #047857;
+}
+
+button.not-read,
+#close-dialog {
+    background-color: #7f1d1d;
+}
+
+button.not-read:hover,
+#close-dialog:hover {
+    background-color: #991b1b;
+}
+
+.card button:last-of-type {
+    background-color: #fafafa;
+    border: 2px solid #991b1b;
+    color: #991b1b;
+}
+
+.card button:last-of-type:hover {
+    color: #b91c1c;
+    border-color: #b91c1c;
+}
+
+form > p {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+dialog {
+    border: none;
+    height: 50vh;
+    border-radius: 8px;
+}
+
+form > div {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+form > div:nth-last-child(2) {
+    margin-bottom: 32px;
+}
+
+form input {
+    flex: 1;
+    padding: 6px;
+}
+
+form label {
+    font-weight: 600;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+
+dialog::backdrop {
+    background-color: #030712;
+    opacity: 50%;
 }
