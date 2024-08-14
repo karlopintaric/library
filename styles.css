@@ -7,6 +7,10 @@ body {
     --primary-color: #065f46;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 button#new-book {
     background-color: var(--primary-color);
     color: #f0fdf4;
