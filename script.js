@@ -1,21 +1,23 @@
 // Object stuff
-function Library() {
-    this.books = [];
+class Library {
+    books = []
+
+    addBookToLibrary(book) {
+        this.books.push(book);
+    }
+
+    removeBookFromLibrary(index) {
+        this.books.splice(index, 1);
+    }
 };
 
-function Book(title, author, pages, read = false) {
+class Book {
+    constructor(title, author, pages, read = false) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-}
-
-Library.prototype.addBookToLibrary = function(book) {
-    this.books.push(book);
-}
-
-Library.prototype.removeBookFromLibrary = function(index) {
-    this.books.splice(index, 1);
+    }
 }
 
 const library = new Library();
